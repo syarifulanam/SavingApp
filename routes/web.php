@@ -13,5 +13,4 @@ Route::prefix('savings')->group(function () {
     Route::get('/', SavingsIndex::class)->name('savings.index');
     Route::get('/create', SavingsCreate::class)->name('savings.create');
     Route::get('{id}/edit', SavingsEdit::class)->name('savings.edit');
-    // Route::get('/savings/{id}/edit', SavingsEdit::class)->name('savings.edit');
 });

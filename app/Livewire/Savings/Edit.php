@@ -15,7 +15,7 @@ class Edit extends Component
         $saving = Saving::findOrFail($id);
 
         $this->savingId     = $saving->id;
-        $this->nama_nasabah = $saving->nama_nasabah; // penting!
+        $this->nama_nasabah = $saving->nama_nasabah;
         $this->type         = $saving->type;
         $this->amount       = $saving->amount;
         $this->date         = $saving->date;
