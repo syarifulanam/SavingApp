@@ -16,6 +16,7 @@
         {{-- {{ $slot }} adalah tempat di mana isi konten dari komponen Livewire atau Blade lain akan "disisipkan" ke dalam layout ini. --}}
         {{ $slot }}
     </div>
+    <livewire:styles />
     @livewireScripts
 </body>
 
