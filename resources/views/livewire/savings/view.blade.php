@@ -9,7 +9,8 @@
                 <div>
                     <h2 class="fw-bold text-success mb-2">View Savings</h2>
                     <p class="text-muted mb-0 fs-6">
-                        Monitor and Update Savings Easily </p>
+                        Monitor and Update Savings Easily
+                    </p>
                 </div>
             </div>
         </header>
@@ -47,9 +48,6 @@
                     <div class="d-flex justify-content-between mt-4">
                         <a href="{{ route('savings.index') }}" class="btn btn-outline-secondary rounded-pill px-4">
                             <i class="bi bi-arrow-left-circle me-1"></i> Back
-                        </a>
-                        <a href="{{ route('savings.edit', $saving->id) }}" class="btn btn-success rounded-pill px-4">
-                            <i class="bi bi-pencil-square me-1"></i> Edit
                         </a>
                     </div>
                 </div>

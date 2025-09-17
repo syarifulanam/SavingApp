@@ -2,9 +2,9 @@
     <main class="flex-grow-1">
         <div class="w-100 bg-light py-3 shadow-sm mb-4">
             <div class="container-fluid d-flex align-items-center ps-4">
-                <div class="bg-success bg-gradient text-white rounded-circle d-flex justify-content-center align-items-center me-3 shadow"
-                    style="width: 60px; height: 60px;">
-                    <i class="bi bi-pencil-square" style="font-size: 1.8rem;"></i>
+                <div class="bg-success bg-gradient text-white rounded-circle d-flex justify-content-center align-items-center me-4 shadow-lg"
+                    style="width: 100px; height: 100px;">
+                    <i class="bi bi-currency-dollar" style="font-size: 3.5rem;"></i>
                 </div>
                 <div>
                     <h3 class="fw-bold text-success mb-1">Edit Savings</h3>
