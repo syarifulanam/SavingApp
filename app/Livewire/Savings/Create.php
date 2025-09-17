@@ -24,6 +24,7 @@ class Create extends Component
         $this->validate();
 
         Saving::create([
+            'nama_nasabah' => $this->nama_nasabah,
             'type'   => $this->type,
             'amount' => $this->amount,
             'created_at' => $this->date,

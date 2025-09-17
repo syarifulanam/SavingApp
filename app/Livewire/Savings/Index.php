@@ -8,21 +8,17 @@ use App\Models\Saving;
 class Index extends Component
 {
     public $savings;
-    public $selectedSavingId = null;
-    public $selectedSavingName = null;
-    public $showDeleteModal = false; // kontrol modal
+    public $showDeleteModal = false;
+    public $selectedSavingId;
+    public $selectedSavingName;
 
+    // ambil data
     public function mount()
     {
-        $this->loadSavings();
+        $this->savings = Saving::latest()->get();
     }
 
-    public function loadSavings()
-    {
-        $this->savings = Saving::all();
-    }
-
-    // Set data yang akan dihapus dan buka modal
+    // buka modal delete
     public function setDelete($id)
     {
         $saving = Saving::findOrFail($id);
@@ -31,21 +27,19 @@ class Index extends Component
         $this->showDeleteModal = true;
     }
 
-    // Hapus data tabungan
+    // hapus data
     public function destroy()
     {
         if ($this->selectedSavingId) {
-            $saving = Saving::findOrFail($this->selectedSavingId);
-            $saving->delete();
+            Saving::find($this->selectedSavingId)?->delete();
 
             session()->flash('message', 'Data tabungan berhasil dihapus.');
 
-            // Reset modal data
-            $this->selectedSavingId = null;
-            $this->selectedSavingName = null;
-            $this->showDeleteModal = false;
+            // reset modal
+            $this->reset(['showDeleteModal', 'selectedSavingId', 'selectedSavingName']);
 
-            $this->loadSavings();
+            // refresh data
+            $this->savings = Saving::latest()->get();
         }
     }
 
