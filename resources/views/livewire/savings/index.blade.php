@@ -24,14 +24,44 @@
                     </a>
                 </div>
 
-                <div class="card-body">
-                    @if (session()->has('message'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            {{ session('message') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <div class="card-body border-bottom py-3">
+                    <div class="row g-2 align-items-end">
+                        <div class="col-md-3">
+                            <label class="form-label mb-1">Search Name</label>
+                            <input type="text" class="form-control form-control-sm" placeholder="Search by name"
+                                wire:model.debounce.300ms="search">
                         </div>
-                    @endif
+                        <div class="col-md-2">
+                            <label class="form-label mb-1">Type</label>
+                            <select class="form-select form-select-sm" wire:model="filterType">
+                                <option value="">All Types</option>
+                                <option value="income">Income</option>
+                                <option value="expense">Expense</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label mb-1">From Date</label>
+                            <input type="date" class="form-control form-control-sm" wire:model="from_date">
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label mb-1">To Date</label>
+                            <input type="date" class="form-control form-control-sm" wire:model="to_date">
+                        </div>
+                        <div class="col-md-3 d-flex gap-2">
+                            <button class="btn btn-primary btn-sm mt-1" wire:click="$refresh">Search</button>
+                            <button class="btn btn-secondary btn-sm mt-1" wire:click="resetFilters">Reset</button>
+                        </div>
+                    </div>
+                </div>
 
+                @if (session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
+                        {{ session('message') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                @endif
+
+                <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table table-hover align-middle mb-0">
                             <thead class="table-success text-center">
@@ -67,7 +97,6 @@
                                                 class="btn btn-info btn-sm rounded-pill px-3 text-white">
                                                 <i class="bi bi-eye me-1"></i> View
                                             </a>
-
                                             <a href="{{ route('savings.edit', $saving->id) }}"
                                                 class="btn btn-warning btn-sm rounded-pill px-3">
                                                 Edit
@@ -108,7 +137,8 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary"
                                     wire:click="$set('showDeleteModal', false)">Cancel</button>
-                                <button type="button" class="btn bg-success" wire:click="destroy">Yes, Delete</button>
+                                <button type="button" class="btn bg-success" wire:click="destroy">Yes,
+                                    Delete</button>
                             </div>
                         </div>
                     </div>
@@ -119,8 +149,7 @@
 
     <footer class="bg-success text-white text-center py-4 shadow-lg mt-auto">
         <div class="container">
-            <p class="mb-1 fw-semibold">© Saving App — Smarter, faster, and secure savings
-                management.</p>
+            <p class="mb-1 fw-semibold">© Saving App — Smarter, faster, and secure savings management.</p>
         </div>
     </footer>
 </div>
