@@ -12,47 +12,37 @@ class Index extends Component
     public $selectedSavingId;
     public $selectedSavingName;
 
-    // ambil data
     public function mount()
     {
         $this->savings = Saving::latest()->get();
     }
 
-    // buka modal delete
     public function setDelete($id)
     {
         $saving = Saving::findOrFail($id);
-        $this->selectedSavingId = $saving->id;
+        $this->selectedSavingId   = $saving->id;
         $this->selectedSavingName = $saving->nama_nasabah;
-        $this->showDeleteModal = true;
+        $this->showDeleteModal    = true;
     }
 
-    // hapus data
     public function destroy()
     {
         if ($this->selectedSavingId) {
-            Saving::find($this->selectedSavingId)?->delete();
-
-            session()->flash('message', 'Data tabungan berhasil dihapus.');
-
-            // reset modal
-            $this->reset(['showDeleteModal', 'selectedSavingId', 'selectedSavingName']);
-
-            // refresh data
-            $this->savings = Saving::latest()->get();
+            $saving = Saving::find($this->selectedSavingId);
+            if ($saving) {
+                $saving->delete();
+                session()->flash('message', 'Savings data has been successfully deleted.');
+            }
         }
+
+        $this->reset(['showDeleteModal', 'selectedSavingId', 'selectedSavingName']);
+
+        $this->savings = Saving::latest()->get();
     }
 
     public function render()
     {
-        return view('livewire.savings.index');
+        $savings = Saving::all();
+        return view('livewire.savings.index', compact('savings'));
     }
 }
-
-
-
-    // public function render()
-    // {
-    //     $savings = Saving::all();
-    //     return view('livewire.savings.index', compact('savings'));
-    // }

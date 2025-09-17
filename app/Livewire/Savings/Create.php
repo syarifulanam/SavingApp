@@ -31,7 +31,7 @@ class Create extends Component
             'updated_at' => now(),
         ]);
 
-        session()->flash('message', 'Data tabungan berhasil disimpan!');
+        session()->flash('message', 'Savings data has been successfully saved!');
         return redirect()->route('savings.index');
     }
 

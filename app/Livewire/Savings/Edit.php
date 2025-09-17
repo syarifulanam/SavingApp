@@ -39,7 +39,7 @@ class Edit extends Component
             'date'         => $this->date,
         ]);
 
-        session()->flash('success', 'Tabungan berhasil diperbarui!');
+        session()->flash('success', 'Savings updated successfully!');
         return redirect()->route('savings.index');
     }
 
