@@ -13,7 +13,6 @@
             </div>
         </div>
 
-
         <div class="container">
             <div class="card shadow-lg border-0 rounded-4 mx-auto" style="max-width: 720px;">
                 <div class="card-header bg-success bg-gradient text-white text-center py-3 rounded-top-4">

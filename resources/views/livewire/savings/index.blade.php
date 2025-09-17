@@ -63,6 +63,11 @@
                                             {{ \Carbon\Carbon::parse($saving->date)->format('d-m-Y') }}
                                         </td>
                                         <td class="text-center">
+                                            <a href="{{ route('savings.view', $saving->id) }}"
+                                                class="btn btn-info btn-sm rounded-pill px-3 text-white">
+                                                <i class="bi bi-eye me-1"></i> View
+                                            </a>
+
                                             <a href="{{ route('savings.edit', $saving->id) }}"
                                                 class="btn btn-warning btn-sm rounded-pill px-3">
                                                 Edit
