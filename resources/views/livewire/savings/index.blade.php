@@ -114,7 +114,8 @@
 
     <footer class="bg-success text-white text-center py-4 shadow-lg mt-auto">
         <div class="container">
-            <p class="mb-1 fw-semibold">© Saving App.</p>
+            <p class="mb-1 fw-semibold">© {{ date('Y') }} Saving App — Smarter, faster, and secure savings
+                management.</p>
         </div>
     </footer>
 </div>

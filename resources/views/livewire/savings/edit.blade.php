@@ -1,22 +1,23 @@
 <div class="d-flex flex-column min-vh-100">
     <main class="flex-grow-1">
-        <div class="w-100 bg-light py-5 shadow-sm mb-5">
-            <div class="container d-flex align-items-center">
-                <div class="bg-success bg-gradient text-white rounded-circle d-flex justify-content-center align-items-center me-4 shadow-lg"
-                    style="width: 90px; height: 90px;">
-                    <i class="bi bi-pencil-square" style="font-size: 3rem;"></i>
+        <div class="w-100 bg-light py-3 shadow-sm mb-4">
+            <div class="container-fluid d-flex align-items-center ps-4">
+                <div class="bg-success bg-gradient text-white rounded-circle d-flex justify-content-center align-items-center me-3 shadow"
+                    style="width: 60px; height: 60px;">
+                    <i class="bi bi-pencil-square" style="font-size: 1.8rem;"></i>
                 </div>
                 <div>
-                    <h2 class="fw-bold text-success mb-2">Edit Savings</h2>
-                    <p class="text-muted mb-0 fs-6">Update customer savings data accurately</p>
+                    <h3 class="fw-bold text-success mb-1">Edit Savings</h3>
+                    <small class="text-muted">Update customer savings data accurately</small>
                 </div>
             </div>
         </div>
 
+
         <div class="container">
             <div class="card shadow-lg border-0 rounded-4 mx-auto" style="max-width: 720px;">
                 <div class="card-header bg-success bg-gradient text-white text-center py-3 rounded-top-4">
-                    <h4 class="mb-0"><i class="bi bi-journal-text me-2"></i> Edit Savings Form</h4>
+                    <h5 class="mb-0"><i class="bi bi-journal-text me-2"></i> Edit Savings Form</h5>
                 </div>
                 <div class="card-body p-4">
 
@@ -90,9 +91,10 @@
         </div>
     </main>
 
-    <footer class="bg-success text-white text-center py-4 shadow-lg mt-auto">
+    <footer class="bg-success text-white text-center py-3 shadow-lg mt-auto">
         <div class="container">
-            <p class="mb-1 fw-semibold">© {{ date('Y') }} Saving App.</p>
+            <p class="mb-1 fw-semibold">© {{ date('Y') }} Saving App — Smarter, faster, and secure savings
+                management.</p>
         </div>
     </footer>
 </div>

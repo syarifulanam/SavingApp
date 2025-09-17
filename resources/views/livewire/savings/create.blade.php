@@ -1,18 +1,17 @@
 <div class="d-flex flex-column min-vh-100">
     <main class="flex-grow-1">
-        <div class="w-100 bg-light py-5 shadow-sm mb-5">
-            <div class="container d-flex align-items-center">
-                <div class="bg-success bg-gradient text-white rounded-circle d-flex justify-content-center align-items-center me-4 shadow-lg"
-                    style="width: 90px; height: 90px;">
-                    <i class="bi bi-currency-dollar" style="font-size: 3rem;"></i>
+        <div class="w-100 bg-light py-3 shadow-sm mb-4">
+            <div class="container-fluid d-flex align-items-center ps-4">
+                <div class="bg-success bg-gradient text-white rounded-circle d-flex justify-content-center align-items-center me-3 shadow"
+                    style="width: 60px; height: 60px;">
+                    <i class="bi bi-pencil-square" style="font-size: 1.8rem;"></i>
                 </div>
                 <div>
-                    <h2 class="fw-bold text-success mb-2">Add Savings</h2>
-                    <p class="text-muted mb-0 fs-6">Fill in the customer savings data completely and accurately</p>
+                    <h3 class="fw-bold text-success mb-1">Edit Savings</h3>
+                    <small class="text-muted">Update customer savings data accurately</small>
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="card shadow-lg border-0 rounded-4 mx-auto" style="max-width: 720px;">
                 <div class="card-header bg-success bg-gradient text-white text-center py-3 rounded-top-4">
@@ -21,7 +20,8 @@
                 <div class="card-body p-4">
 
                     @if (session()->has('message'))
-                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center"
+                            role="alert">
                             <i class="bi bi-check-circle-fill me-2"></i>
                             <div>{{ session('message') }}</div>
                             <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"
@@ -32,7 +32,8 @@
                     <form wire:submit.prevent="save" novalidate>
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Customer Name</label>
-                            <input type="text" class="form-control rounded-pill shadow-sm @error('nama_nasabah') is-invalid @enderror"
+                            <input type="text"
+                                class="form-control rounded-pill shadow-sm @error('nama_nasabah') is-invalid @enderror"
                                 wire:model.defer="nama_nasabah" placeholder="Enter customer name">
                             @error('nama_nasabah')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -54,7 +55,8 @@
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Amount</label>
-                            <input type="number" class="form-control rounded-pill shadow-sm @error('amount') is-invalid @enderror"
+                            <input type="number"
+                                class="form-control rounded-pill shadow-sm @error('amount') is-invalid @enderror"
                                 wire:model.defer="amount" placeholder="Enter savings amount">
                             @error('amount')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -63,7 +65,8 @@
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Date</label>
-                            <input type="date" class="form-control rounded-pill shadow-sm @error('date') is-invalid @enderror"
+                            <input type="date"
+                                class="form-control rounded-pill shadow-sm @error('date') is-invalid @enderror"
                                 wire:model.defer="date">
                             @error('date')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -88,7 +91,8 @@
 
     <footer class="bg-success text-white text-center py-4 shadow-lg mt-auto">
         <div class="container">
-            <p class="mb-1 fw-semibold">© {{ date('Y') }} Saving App. All rights reserved.</p>
+            <p class="mb-1 fw-semibold">© {{ date('Y') }} Saving App — Smarter, faster, and secure savings
+                management.</p>
         </div>
     </footer>
 </div>
